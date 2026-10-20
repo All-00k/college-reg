@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrations</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar-row">
+      <a class="brand" href="/">Campus<span>Connect</span></a>
+      <nav>
+        <a href="/">Register</a>
+        <a href="/registrations" aria-current="page">Registrations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" style="max-width: 1000px">
+    <section class="intro">
+      <p class="eyebrow">Organisers</p>
+      <h1>Registrations</h1>
+      <p class="lede">Everyone who has registered so far. This list is private to the machine running the server, or to anyone with the admin key.</p>
+    </section>
+
+    <div class="keybox" id="keybox">
+      <input type="password" id="adminKey" placeholder="Admin key" autocomplete="off" aria-label="Admin key">
+      <button type="button" class="btn btn-primary" id="keyBtn">Unlock</button>
+      <span class="note" id="keyMsg"></span>
+    </div>
+
+    <div class="tools">
+      <input type="search" id="q" placeholder="Search by name, enrollment, email, college" aria-label="Search registrations">
+      <span class="count" id="count"></span>
+      <button type="button" class="btn btn-ghost" id="csvBtn">Download CSV</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Enrollment</th><th>College</th><th>Course</th><th>Year</th><th>Email</th><th>Mobile</th><th>City</th><th>Registered</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="empty" id="empty" hidden>No registrations to show.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">CampusConnect registration · 2026–27</div></footer>
+  <script src="/registrations.js"></script>
+</body>
+</html>

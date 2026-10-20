@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student registration</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar-row">
+      <a class="brand" href="/">Campus<span>Connect</span></a>
+      <nav>
+        <a href="/" aria-current="page">Register</a>
+        <a href="/registrations">Registrations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <p class="eyebrow">Academic year 2026–27</p>
+      <h1>Student registration</h1>
+      <p class="lede">Takes about three minutes. Use your details exactly as they appear on your college records.</p>
+      <div class="progress" aria-live="polite">
+        <div class="progress-text"><span>Required fields</span><strong id="pcount">0 / 11</strong></div>
+        <div class="bar"><span id="pbar"></span></div>
+      </div>
+    </section>
+
+    <form id="reg" novalidate>
+      <fieldset>
+        <legend>About you</legend>
+        <div class="grid">
+          <div class="field" data-field="fullName">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="Aarav Sharma">
+            <p class="err" id="fullName-err"></p>
+          </div>
+          <div class="field" data-field="dob">
+            <label for="dob">Date of birth</label>
+            <input type="date" id="dob" name="dob" autocomplete="bday">
+            <p class="err" id="dob-err"></p>
+          </div>
+        </div>
+        <div class="field">
+          <span class="lab" id="gender-lab">Gender <span class="opt">(optional)</span></span>
+          <div class="chips" role="radiogroup" aria-labelledby="gender-lab">
+            <input type="radio" id="g1" name="gender" value="Female"><label for="g1">Female</label>
+            <input type="radio" id="g2" name="gender" value="Male"><label for="g2">Male</label>
+            <input type="radio" id="g3" name="gender" value="Non-binary"><label for="g3">Non-binary</label>
+            <input type="radio" id="g4" name="gender" value="Prefer not to say"><label for="g4">Prefer not to say</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your college</legend>
+        <div class="grid">
+          <div class="field" data-field="enrollment">
+            <label for="enrollment">Enrollment number</label>
+            <input type="text" id="enrollment" name="enrollment" class="mono" autocapitalize="characters" autocomplete="off" placeholder="21CS1042">
+            <p class="err" id="enrollment-err"></p>
+          </div>
+          <div class="field" data-field="college">
+            <label for="college">College / university</label>
+            <input type="text" id="college" name="college" autocomplete="organization" placeholder="Delhi Technological University">
+            <p class="err" id="college-err"></p>
+          </div>
+          <div class="field" data-field="course">
+            <label for="course">Course</label>
+            <select id="course" name="course">
+              <option value="">Select your course</option>
+              <option>B.Tech / B.E.</option>
+              <option>B.Sc</option>
+              <option>B.A.</option>
+              <option>B.Com</option>
+              <option>BBA / BMS</option>
+              <option>BCA</option>
+              <option>LL.B.</option>
+              <option>MBBS</option>
+              <option>M.Tech</option>
+              <option>M.Sc</option>
+              <option>MBA</option>
+              <option>Other</option>
+            </select>
+            <p class="err" id="course-err"></p>
+          </div>
+          <div class="field" data-field="branch">
+            <label for="branch">Branch / department</label>
+            <input type="text" id="branch" name="branch" placeholder="Computer Science">
+            <p class="err" id="branch-err"></p>
+          </div>
+        </div>
+        <div class="field" data-field="year">
+          <span class="lab" id="year-lab">Year of study</span>
+          <div class="chips" role="radiogroup" aria-labelledby="year-lab">
+            <input type="radio" id="y1" name="year" value="1st year"><label for="y1">1st</label>
+            <input type="radio" id="y2" name="year" value="2nd year"><label for="y2">2nd</label>
+            <input type="radio" id="y3" name="year" value="3rd year"><label for="y3">3rd</label>
+            <input type="radio" id="y4" name="year" value="4th year"><label for="y4">4th</label>
+            <input type="radio" id="y5" name="year" value="5th year"><label for="y5">5th</label>
+          </div>
+          <p class="err" id="year-err"></p>
+        </div>
+        <div class="field">
+          <span class="lab" id="stay-lab">Where do you stay? <span class="opt">(optional)</span></span>
+          <div class="chips" role="radiogroup" aria-labelledby="stay-lab">
+            <input type="radio" id="s1" name="stay" value="Hostel"><label for="s1">Hostel</label>
+            <input type="radio" id="s2" name="stay" value="Day scholar"><label for="s2">Day scholar</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How to reach you</legend>
+        <div class="grid">
+          <div class="field" data-field="email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@college.edu.in">
+            <p class="err" id="email-err"></p>
+          </div>
+          <div class="field" data-field="phone">
+            <label for="phone">Mobile number</label>
+            <div class="phone">
+              <span class="cc" aria-hidden="true">+91</span>
+              <input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel-national" maxlength="12" placeholder="98765 43210">
+            </div>
+            <p class="err" id="phone-err"></p>
+          </div>
+          <div class="field" data-field="city">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="New Delhi">
+            <p class="err" id="city-err"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>What are you into?</legend>
+        <p class="sub">Pick any that fit. We use this to suggest clubs and events.</p>
+        <div class="chips">
+          <input type="checkbox" id="i1" name="interests" value="Coding"><label for="i1">Coding</label>
+          <input type="checkbox" id="i2" name="interests" value="Design"><label for="i2">Design</label>
+          <input type="checkbox" id="i3" name="interests" value="Sports"><label for="i3">Sports</label>
+          <input type="checkbox" id="i4" name="interests" value="Music"><label for="i4">Music</label>
+          <input type="checkbox" id="i5" name="interests" value="Drama"><label for="i5">Drama</label>
+          <input type="checkbox" id="i6" name="interests" value="Entrepreneurship"><label for="i6">Entrepreneurship</label>
+          <input type="checkbox" id="i7" name="interests" value="Photography"><label for="i7">Photography</label>
+          <input type="checkbox" id="i8" name="interests" value="Volunteering"><label for="i8">Volunteering</label>
+        </div>
+        <div class="field">
+          <label for="notes">Anything else we should know? <span class="opt">(optional)</span></label>
+          <textarea id="notes" name="notes" maxlength="1000" placeholder="Accessibility needs, dietary preferences, questions for the organisers"></textarea>
+        </div>
+        <div class="field" data-field="consent">
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent">
+            <label for="consent">I confirm the details above are correct and agree to receive registration updates by email and SMS.</label>
+          </div>
+          <p class="err" id="consent-err"></p>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" id="submitBtn">Submit registration</button>
+        <p class="status" id="status" role="alert"></p>
+      </div>
+    </form>
+
+    <section class="done" id="done" hidden aria-live="polite">
+      <p class="eyebrow">You're in</p>
+      <h2 id="doneTitle">Registration complete</h2>
+      <div class="ticket">
+        <div><small>Registration ID</small><strong id="regId">CC26-00000</strong></div>
+        <button type="button" class="btn btn-ghost" id="copyBtn">Copy ID</button>
+      </div>
+      <dl class="summary" id="summary"></dl>
+      <p class="note">Keep your registration ID. You will need it if you contact the organisers.</p>
+      <button type="button" class="btn btn-ghost" id="againBtn">Register another student</button>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">CampusConnect registration · 2026–27</div></footer>
+  <script src="/script.js"></script>
+</body>
+</html>
